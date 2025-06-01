@@ -23,9 +23,9 @@
   --spanish-gray: hsl(0, 0%, 60%);
   --sonic-silver: hsl(0, 0%, 47%);
   --eerie-black: hsl(0, 0%, 13%);
-  --salmon-pink: hsl(353, 100%, 78%);
+  --salmon-pink: hsl(20, 97%, 50%);
   --sandy-brown: hsl(29, 90%, 65%);
-  --bittersweet: hsl(0, 100%, 70%);
+  --bittersweet: hsl(13, 92%, 52%);
   --ocean-green: hsl(152, 51%, 52%);
   --davys-gray: hsl(0, 0%, 33%);
   --cultured: hsl(0, 0%, 93%);
@@ -77,6 +77,8 @@ body {
 
 
 
+
+
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
@@ -88,9 +90,13 @@ body {
           box-sizing: border-box;
 }
 
-a { text-decoration: none; }
+a { 
+  text-decoration: none;
+}
 
-li { list-style: none; }
+li { 
+  list-style: none; 
+}
 
 button {
   background: none;
