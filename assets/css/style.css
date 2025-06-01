@@ -1,36 +1,28 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-/**
- * copyright 2022 @codewithsadee 
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
 :root {
 
   /**
-   * colors
+   * colors - Dark Theme
    */
 
   --spanish-gray: hsl(0, 0%, 60%);
-  --sonic-silver: hsl(0, 0%, 47%);
-  --eerie-black: hsl(0, 0%, 13%);
+  --sonic-silver: hsl(0, 0%, 70%); /* Lighter for better contrast */
+  --eerie-black: hsl(0, 0%, 87%); /* Now used for light text */
   --salmon-pink: hsl(353, 100%, 78%);
   --sandy-brown: hsl(29, 90%, 65%);
   --bittersweet: hsl(0, 100%, 70%);
   --ocean-green: hsl(152, 51%, 52%);
-  --davys-gray: hsl(0, 0%, 33%);
-  --cultured: hsl(0, 0%, 93%);
-  --white: hsl(0, 100%, 100%);
-  --onyx: hsl(0, 0%, 27%);
+  --davys-gray: hsl(0, 0%, 67%); /* Lighter for better contrast */
+  --cultured: hsl(0, 0%, 20%); /* Dark background */
+  --white: hsl(0, 0%, 10%); /* Dark background */
+  --onyx: hsl(0, 0%, 85%); /* Light text */
+  
+  /* Additional dark theme colors */
+  --dark-bg-primary: hsl(0, 0%, 8%);
+  --dark-bg-secondary: hsl(0, 0%, 12%);
+  --dark-bg-tertiary: hsl(0, 0%, 18%);
+  --dark-border: hsl(0, 0%, 25%);
+  --dark-text-primary: hsl(0, 0%, 90%);
+  --dark-text-secondary: hsl(0, 0%, 70%);
 
   /**
    * typography
@@ -110,32 +102,35 @@ input {
 }
 
 input::placeholder { font: inherit; }
-/* styles.css */
+
+/* Dark theme body */
 body {
+  background-color: var(--dark-bg-primary);
   background-image: url('background.png'); /* adjust the path if in a folder */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  color: var(--dark-text-primary);
 }
 
 /**
- * scrollbar style
+ * scrollbar style - Dark theme
  */
 
 body::-webkit-scrollbar { width: 15px; }
 
 body::-webkit-scrollbar-track {
-  background: var(--white);
-  border-left: 1px solid var(--cultured);
+  background: var(--dark-bg-secondary);
+  border-left: 1px solid var(--dark-border);
 }
 
 body::-webkit-scrollbar-thumb {
-  background: hsl(256, 93%, 5%);
-  border: 3px solid var(--white);
+  background: hsl(256, 93%, 25%); /* Lighter purple for dark theme */
+  border: 3px solid var(--dark-bg-secondary);
   border-radius: 10px;
 }
 
-body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
+body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 35%); }
 
 
 
@@ -156,22 +151,22 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
   background: transparent;
-  border: 3px solid var(--white);
+  border: 3px solid var(--dark-bg-secondary);
   border-radius: 20px;
 }
 
-.has-scrollbar:hover::-webkit-scrollbar-thumb { background: hsl(0, 0%, 90%); }
+.has-scrollbar:hover::-webkit-scrollbar-thumb { background: hsl(0, 0%, 30%); }
 
-.has-scrollbar::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 80%); }
+.has-scrollbar::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 40%); }
 
 .title {
-  color: var(--eerie-black);
+  color: var(--dark-text-primary);
   font-size: var(--fs-5);
   font-weight: var(--weight-600);
   letter-spacing: 0.4px;
   text-transform: capitalize;
   padding-bottom: 10px;
-  border-bottom: 1px solid var(--cultured);
+  border-bottom: 1px solid var(--dark-border);
   margin-bottom: 30px;
 }
 
@@ -193,7 +188,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
   left: 0;
   width: 100%;
   height: 100vh;
-  background: hsla(0, 0%, 0%, 0.5);
+  background: hsla(0, 0%, 0%, 0.7); /* Darker overlay for dark theme */
   opacity: 0;
   pointer-events: none;
   z-index: 15;
@@ -217,7 +212,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
   left: 0;
   width: 100%;
   height: 100vh;
-  background: hsla(0, 0%, 0%, 0.5);
+  background: hsla(0, 0%, 0%, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -261,11 +256,12 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
   position: relative;
   max-width: 350px;
   margin: 20px;
-  background: var(--white);
+  background: var(--dark-bg-secondary);
   border-radius: var(--border-radius-md);
   overflow: hidden;
   z-index: 2;
   animation: scaleUp 0.5s ease-in-out 5s forwards;
+  border: 1px solid var(--dark-border);
 }
 
 @keyframes scaleUp {
@@ -280,7 +276,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
   top: 15px;
   right: 15px;
   background: var(--salmon-pink);
-  color: var(--white);
+  color: var(--dark-bg-primary);
   font-size: 16px;
   padding: 5px;
   border-radius: var(--border-radius-sm);
@@ -298,14 +294,14 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
 .newsletter-header { margin-bottom: 20px; }
 
 .newsletter-title {
-  color: var(--onyx);
+  color: var(--dark-text-primary);
   font-size: var(--fs-2);
   font-weight: var(--weight-600);
   margin-bottom: 10px;
 }
 
 .newsletter-desc {
-  color: var(--sonic-silver);
+  color: var(--dark-text-secondary);
   font-size: var(--fs-7);
   line-height: 1.6;
 }
@@ -314,13 +310,19 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
   font-size: var(--fs-7);
   padding: 8px 16px;
   border-radius: var(--border-radius-sm);
-  border: 1px solid var(--cultured);
+  border: 1px solid var(--dark-border);
   margin-bottom: 16px;
+  background: var(--dark-bg-tertiary);
+  color: var(--dark-text-primary);
+}
+
+.email-field::placeholder {
+  color: var(--dark-text-secondary);
 }
 
 .btn-newsletter {
-  background: var(--eerie-black);
-  color: var(--white);
+  background: var(--salmon-pink);
+  color: var(--dark-bg-primary);
   font-size: var(--fs-7);
   font-weight: var(--weight-600);
   text-transform: uppercase;
@@ -330,7 +332,10 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
   transition: var(--transition-timing);
 }
 
-.btn-newsletter:hover { background: var(--salmon-pink); }
+.btn-newsletter:hover { 
+  background: var(--bittersweet);
+  transform: translateY(-1px);
+}
 
 
 
@@ -345,14 +350,15 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
   bottom: 80px;
   left: 20px;
   right: 20px;
-  background: var(--white);
+  background: var(--dark-bg-secondary);
   max-width: 300px;
   display: flex;
   align-items: flex-start;
   gap: 15px;
   padding: 15px;
   border-radius: var(--border-radius-md);
-  box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.15);
+  box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.3); /* Darker shadow */
+  border: 1px solid var(--dark-border);
   transform: translateX(calc(-100% - 40px));
   transition: 0.5s ease-in-out;
   z-index: 5;
@@ -384,7 +390,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
   position: absolute;
   top: 10px;
   right: 10px;
-  color: var(--sonic-silver);
+  color: var(--dark-text-secondary);
 }
 
 .toast-close-btn ion-icon { --ionicon-stroke-width: 50px; }
@@ -392,8 +398,9 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
 .toast-banner {
   width: 70px;
   height: 70px;
-  border: 1px solid var(--cultured);
+  border: 1px solid var(--dark-border);
   border-radius: var(--border-radius-sm);
+  background: var(--dark-bg-tertiary);
 }
 
 .toast-banner img {
@@ -410,19 +417,19 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(249, 93%, 6%); }
 
 .toast-message {
   font-size: var(--fs-10);
-  color: var(--sonic-silver);
+  color: var(--dark-text-secondary);
   margin-bottom: 8px;
 }
 
 .toast-title {
   font-size: var(--fs-7);
   font-weight: var(--weight-500);
-  color: var(--onyx);
+  color: var(--dark-text-primary);
 }
 
 .toast-meta {
   font-size: var(--fs-10);
-  color: var(--sonic-silver);
+  color: var(--dark-text-secondary);
 }
 
 
@@ -1799,27 +1806,7 @@ footer {
 
   .slider-item { aspect-ratio: 5 / 3; }
 
-  .banner-content {
-    top: 50%;
-    right: auto;
-    bottom: auto;
-    transform: translateY(-50%);
-    max-width: 320px;
-  }
 
-  .banner-subtitle { --fs-7: 1rem; }
-
-  .banner-text {
-    display: block;
-    color: var(--sonic-silver);
-    font-size: var(--fs-7);
-    font-weight: var(--weight-500);
-    margin-bottom: 10px;
-  }
-
-  .banner-text b { font-size: var(--fs-2); }
-
-  .banner-btn { padding: 7px 20px; }
 
 
 
@@ -2011,16 +1998,8 @@ footer {
    * #MODAL 
    */
 
-  .modal-content {
-    display: flex;
-    align-items: center;
-    max-width: 750px;
-    width: fit-content;
-  }
 
-  .newsletter-img { display: block; }
 
-  .newsletter { text-align: left; }
 
 
 

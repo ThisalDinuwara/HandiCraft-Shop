@@ -70,6 +70,10 @@
 }
 
 
+body {
+  background-color: #121212; /* dark background */
+  color: white; /* change text color for contrast */
+}
 
 
 
@@ -250,8 +254,8 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(254, 93%, 5%); }
   visibility: hidden;
   pointer-events: none;
   z-index: 10;
-  -webkit-animation: popup 1s ease-in-out 5s forwards;
-          animation: popup 1s ease-in-out 5s forwards;
+  -webkit-animation: popup 0.2s ease-in-out 1s forwards;
+          animation: popup 0.2s ease-in-out 1s forwards;
 }
 
 @-webkit-keyframes popup {
@@ -401,7 +405,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(254, 93%, 5%); }
   bottom: 80px;
   left: 20px;
   right: 20px;
-  background: var(--white);
+  background: var(--eerie-black);
   max-width: 300px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2886,20 +2890,42 @@ footer {
    * #BANNER 
    */
 
-  .banner { margin-top: 0; }
+.banner-title {
+  font-size: 48px;
+  color: #040200;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  animation: fadeInUp 1.2s ease-in-out;
+}
 
-  .slider-item { height: 380px; }
-
-  .banner-content {
-    left: 75px;
-    max-width: 400px;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.banner-content {
+  position: absolute;
+  top: 50%;
+  right: 200%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
 
-  .banner-subtitle { --fs-7: 1.625rem; }
+.slider-item {
+  position: relative;
+}
 
-  .banner-text { --fs-7: 1.375rem; }
 
-  .banner-btn { --fs-11: 0.875rem; }
 
 
 
@@ -2981,7 +3007,12 @@ footer {
 
   .product-featured .countdown-content { padding: 5px 10px; }
 
-  .product-grid { -ms-grid-columns: (1fr)[3]; grid-template-columns: repeat(3, 1fr); }
+  .product-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+}
 
 
 
@@ -3109,7 +3140,13 @@ footer {
 
   .product-featured .display-number { --fs-5: 1.125rem; }
 
-  .product-grid { -ms-grid-columns: (1fr)[4]; grid-template-columns: repeat(4, 1fr); }
+.product-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+}
+
 
 
 
