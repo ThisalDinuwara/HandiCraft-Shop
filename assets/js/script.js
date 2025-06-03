@@ -12,10 +12,6 @@ const modalCloseFunc = function () { modal.classList.add('closed') }
 modalCloseOverlay.addEventListener('click', modalCloseFunc);
 modalCloseBtn.addEventListener('click', modalCloseFunc);
 
-
-
-
-
 // notification toast variables
 const notificationToast = document.querySelector('[data-toast]');
 const toastCloseBtn = document.querySelector('[data-toast-close]');
@@ -24,10 +20,6 @@ const toastCloseBtn = document.querySelector('[data-toast-close]');
 toastCloseBtn.addEventListener('click', function () {
   notificationToast.classList.add('closed');
 });
-
-
-
-
 
 // mobile menu variables
 const mobileMenuOpenBtn = document.querySelectorAll('[data-mobile-menu-open-btn]');
@@ -53,10 +45,6 @@ for (let i = 0; i < mobileMenuOpenBtn.length; i++) {
 
 }
 
-
-
-
-
 // accordion variables
 const accordionBtn = document.querySelectorAll('[data-accordion-btn]');
 const accordion = document.querySelectorAll('[data-accordion]');
@@ -77,7 +65,6 @@ for (let i = 0; i < accordionBtn.length; i++) {
         accordionBtn[i].classList.remove('active');
 
       }
-
     }
 
     this.nextElementSibling.classList.toggle('active');
